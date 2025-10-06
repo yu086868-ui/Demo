@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/surface"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <!-- 成就图标 -->
+        <LinearLayout
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/achievement_icon_bg"
+            android:gravity="center"
+            android:layout_marginEnd="16dp">
+
+            <ImageView
+                android:id="@+id/ivAchievementIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_trophy"
+                app:tint="@color/primary" />
+
+            <!-- 解锁状态角标 -->
+            <ImageView
+                android:id="@+id/ivLocked"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_lock"
+                app:tint="@color/text_tertiary"
+                android:layout_gravity="bottom|end" />
+
+        </LinearLayout>
+
+        <!-- 成就信息 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvAchievementName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="成就名称"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/tvAchievementDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="成就描述"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/tvProgressDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="进度详情"
+                android:textSize="12sp"
+                android:textColor="@color/text_tertiary"
+                android:layout_marginBottom="8dp" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_marginBottom="4dp"
+                app:trackColor="@color/text_tertiary"
+                app:trackCornerRadius="2dp"
+                app:indicatorColor="@color/success" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tvProgress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0%"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary" />
+
+                <TextView
+                    android:id="@+id/tvUnlocked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="已解锁"
+                    android:textSize="12sp"
+                    android:textColor="@color/success"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/ic_check" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
